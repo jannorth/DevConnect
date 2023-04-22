@@ -19,10 +19,5 @@ module.exports = {
         console.log(err);
         return res.status(500).json(err);
       });
-    // if (newUser) {
-    //   res.json("User was created");
-    // } else {
-    //   res.json("no user created");
-    // }
   },
 };
