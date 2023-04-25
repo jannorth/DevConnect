@@ -8,7 +8,7 @@ import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    recruiter: false,
+    recruiter: true,
     username: "",
     email: "",
     password: "",
