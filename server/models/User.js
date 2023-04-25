@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 const userSchema = new Schema({
   recruiter: {
     type: Boolean,
-    required: true,
     trim: true,
   },
   username: {
