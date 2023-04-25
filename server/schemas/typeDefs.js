@@ -40,7 +40,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(
-      recruiter: Boolean!
+      recruiter: Boolean
       username: String!
       email: String!
       password: String!
