@@ -6,6 +6,8 @@ import { ADD_COMMENT } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
+import { Colors } from '../../colors'
+
 const CommentForm = ({ thoughtId }) => {
   const [commentText, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
@@ -40,8 +42,11 @@ const CommentForm = ({ thoughtId }) => {
   };
 
   return (
-    <div>
-      <h4>What are your thoughts on this thought?</h4>
+    <div className='card-body m-1 p-2' style={{ 
+      backgroundColor: Colors.primaryColor, 
+      color: Colors.secondaryColor 
+    }}>
+      <h4 className='card-title'>What are your thoughts on this post?</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -51,7 +56,7 @@ const CommentForm = ({ thoughtId }) => {
             }`}
           >
             Character Count: {characterCount}/280
-            {error && <span className="ml-2">{error.message}</span>}
+            {error && <span className="ml-2">Oops! You forgot to type something. Please try again.</span>}
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
@@ -63,13 +68,15 @@ const CommentForm = ({ thoughtId }) => {
                 placeholder="Add your comment..."
                 value={commentText}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '1.5', resize: 'none'}}
                 onChange={handleChange}
               ></textarea>
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="btn btn-primary btn-lg btn-block btn-dark py-3" style={{ 
+                boxShadow: `0px 0px 10px 5px ${Colors.quarternaryColor}` 
+                }} type="submit">
                 Add Comment
               </button>
             </div>
