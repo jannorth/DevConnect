@@ -76,14 +76,14 @@ const ThoughtForm = () => {
   return (
     <div>
       <h4 className="d-flex align-items-center mb-0">
-        What's on your techy mind?
+      Network and Unlock New Career Opportunities!
       </h4>
 
       <MDBCard style={{ width: "100%" }}>
         <div className="border border-left border-right px-0">
           <div className="p-3 border-bottom">
             <h4 className="d-flex align-items-center mb-0">
-              Home
+              
               <MDBIcon
                 far
                 icon="star"
