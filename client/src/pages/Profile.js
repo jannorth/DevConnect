@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import { Navigate, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { Navigate, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
-import ThoughtForm from '../components/ThoughtForm';
-import ThoughtList from '../components/ThoughtList';
-import ProfilePage from '../components/ProfilePage';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import ThoughtForm from "../components/ThoughtForm";
+import ThoughtList from "../components/ThoughtList";
+import ProfilePage from "../components/ProfilePage";
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -36,6 +36,10 @@ const Profile = () => {
     );
   }
 
+  if (user.recruiter === true) {
+    return <h4>👁️‍🗨️</h4>;
+  }
+
   return (
     <div>
       <ProfilePage />
@@ -55,10 +59,9 @@ const Profile = () => {
         {!userParam && (
           <div
             className="col-12 col-md-10 mb-3 p-3"
-            style={{ border: '1px dotted #1a1a1a' }}
+            style={{ border: "1px dotted #1a1a1a" }}
           >
             <ThoughtForm />
-            
           </div>
         )}
       </div>
