@@ -6,6 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+<<<<<<< HEAD
 /* max-width: 100%;
     /* 1 */
 /* padding: 0; */
@@ -15,6 +16,11 @@
 /* } */
 
 /**
+=======
+  
+  
+  /**
+>>>>>>> c259edcc484794fcae07bbb6662ba28306f09aab
    * Add the correct vertical alignment in Chrome, Firefox, and Opera.
    */
 progress {
