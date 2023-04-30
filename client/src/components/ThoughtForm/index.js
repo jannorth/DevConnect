@@ -21,7 +21,7 @@ import {
 } from "mdb-react-ui-kit";
 
 const ThoughtForm = () => {
-  const [thoughtText, setThoughtText] = useState("");
+  const [thoughtText, setThoughtText] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -58,7 +58,7 @@ const ThoughtForm = () => {
         },
       });
 
-      setThoughtText("");
+      setThoughtText('');
     } catch (err) {
       console.error(err);
     }
@@ -67,7 +67,7 @@ const ThoughtForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === "thoughtText" && value.length <= 280) {
+    if (name === 'thoughtText' && value.length <= 280) {
       setThoughtText(value);
       setCharacterCount(value.length);
     }
@@ -97,7 +97,7 @@ const ThoughtForm = () => {
             <MDBCardBody className="border-bottom pb-2">
               <div className="d-flex">
                 <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                  src="https://user-images.githubusercontent.com/115906481/235279069-8524aec4-d798-4a11-b1d8-693c634bbf3d.png"
                   className="rounded-circle"
                   height="50"
                   alt="Avatar"
@@ -112,7 +112,7 @@ const ThoughtForm = () => {
                             characterCount === 280 || error ? "text-danger" : ""
                           }`}
                         >
-                          Character Count: {characterCount}/280
+                          Character Count: {characterCount} /280
                         </p>
                         <form
                           className="flex-row justify-center justify-space-between-md align-center"
@@ -120,14 +120,14 @@ const ThoughtForm = () => {
                         >
                           <input
                             name="thoughtText"
-                            placeholder="Here's a new thought..."
+                            placeholder="Share your thoughts..."
                             value={thoughtText}
                             className="form-input w-100"
                             style={{ lineHeight: "1.5", resize: "vertical" }}
                             onChange={handleChange}
                           />
-                          <div className="d-flex align-items-center">
-                            <MDBBtn rounded>Tweet</MDBBtn>
+                          <div className="d-flex align-items-center ">
+                            <MDBBtn rounded>Connect</MDBBtn>
                           </div>
                         </form>
                         <a href="#!">
