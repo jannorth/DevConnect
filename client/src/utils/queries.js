@@ -1,10 +1,11 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
       _id
       username
+      recruiter
       email
       thoughts {
         _id
@@ -48,6 +49,7 @@ export const QUERY_ME = gql`
     me {
       _id
       username
+      recruiter
       email
       thoughts {
         _id

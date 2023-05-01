@@ -1,4 +1,10 @@
 import React from "react";
+// import icon component
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import the icon
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+// usage
+
 import {
   MDBCol,
   MDBContainer,
@@ -11,8 +17,8 @@ import {
   MDBTypography,
   MDBIcon,
 } from "mdb-react-ui-kit";
-
 const ProfilePage = ({
+  user,
   thoughts,
   title,
   showTitle = true,
@@ -48,7 +54,17 @@ const ProfilePage = ({
                   </MDBBtn>
                 </div>
                 <div className="ms-3" style={{ marginTop: "130px" }}>
-                <MDBTypography tag="h5">Andrew Berry{showUsername}</MDBTypography>
+                  <MDBTypography tag="h5">
+                    {user.username}
+                    {"   "}
+
+                    {user.recruiter ? (
+                      <FontAwesomeIcon icon={faSearch} fa-2xs="true" />
+                    ) : (
+                      <img />
+                    )}
+                  </MDBTypography>
+
                   <MDBCardText>New York</MDBCardText>
                 </div>
               </div>
@@ -94,10 +110,10 @@ const ProfilePage = ({
                       Front-End Web Developer
                     </MDBCardText>
                     <MDBCardText className="font-italic mb-1">
-                      Lives in Richmond, Virginia 
+                      Lives in Richmond, Virginia
                     </MDBCardText>
                     <MDBCardText className="font-italic mb-0">
-                      Actively searching for new opportunities. 
+                      Actively searching for new opportunities.
                     </MDBCardText>
                   </div>
                 </div>
@@ -105,9 +121,7 @@ const ProfilePage = ({
                   <MDBCardText className="lead fw-normal mb-0">
                     Recent Post
                   </MDBCardText>
-                  <MDBCardText className="mb-0">
-                    
-                  </MDBCardText>
+                  <MDBCardText className="mb-0"></MDBCardText>
                 </div>
                 <MDBRow></MDBRow>
               </MDBCardBody>
@@ -120,7 +134,6 @@ const ProfilePage = ({
 };
 
 export default ProfilePage;
-
 
 // export const Colors = {
 //   primaryColor: '#003844',
