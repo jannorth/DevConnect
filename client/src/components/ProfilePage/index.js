@@ -17,6 +17,7 @@ const ProfilePage = ({
   title,
   showTitle = true,
   showUsername = true,
+  username
 }) => {
   return (
     <div className="gradient-custom-2" style={{ backgroundColor: "#003844" }}>
@@ -49,7 +50,7 @@ const ProfilePage = ({
                 </div>
                 <div className="ms-3" style={{ marginTop: "130px" }}>
                   <MDBTypography tag="h5">
-                    Andrew Berry{showUsername}
+                    {username}
                   </MDBTypography>
                   <MDBCardText>New York</MDBCardText>
                 </div>
