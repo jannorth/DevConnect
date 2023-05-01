@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
@@ -40,6 +40,11 @@ const CommentForm = ({ thoughtId }) => {
       setCharacterCount(value.length);
     }
   };
+
+  useEffect(() => {
+    // Set the background color on the body or root element
+    document.body.style.backgroundColor = Colors.tertiaryColor;
+  }, []);
 
   return (
     <div className='card-body m-1 p-2' style={{ 
