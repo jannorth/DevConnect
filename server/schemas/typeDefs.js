@@ -5,6 +5,8 @@ const typeDefs = gql`
     _id: ID
     recruiter: Boolean
     username: String
+    city: String
+    state: String
     email: String
     password: String
     thoughts: [Thought]!
@@ -42,6 +44,8 @@ const typeDefs = gql`
     addUser(
       recruiter: Boolean
       username: String!
+      state: String!
+      city: String!
       email: String!
       password: String!
     ): Auth

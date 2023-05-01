@@ -10,9 +10,12 @@ const Signup = () => {
   const [formState, setFormState] = useState({
     recruiter: true,
     username: "",
+    city: "",
+    state: "",
     email: "",
     password: "",
   });
+
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
@@ -60,6 +63,22 @@ const Signup = () => {
                   name="username"
                   type="text"
                   value={formState.username}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Your city"
+                  name="city"
+                  type="text"
+                  value={formState.city}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Your state"
+                  name="state"
+                  type="text"
+                  value={formState.state}
                   onChange={handleChange}
                 />
                 <input

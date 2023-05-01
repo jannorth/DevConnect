@@ -8,7 +8,9 @@ import ThoughtList from "../components/ThoughtList";
 import ProfilePage from "../components/ProfilePage";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 
+
 import { Colors } from "./../colors";
+
 import Auth from "../utils/auth";
 
 const Profile = () => {
@@ -19,13 +21,10 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
+  console.log(JSON.stringify(user));
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/me" />;
-  }
-
-  if (loading) {
-    return <div>Loading...</div>;
   }
 
   if (!user?.username) {
@@ -37,29 +36,25 @@ const Profile = () => {
     );
   }
 
-  return (
-    <div
-      className="card-body m-1 p-2"
-      style={{
-        backgroundColor: Colors.primaryColor,
-        color: Colors.secondaryColor,
-      }}
-    >
+  if (loading) {
+    return <div>Loading...</div>;
+  } else if (user != null) {
+    return (
       <div>
-      <ProfilePage username={user.username} />
+        <ProfilePage user={user} />
         <div className="flex-row justify-center mb-3">
           {/* <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-        </h2> */}
-          <div className="d-flex justify-content-center">
-            <div className="col-12 col-md-10 mb-5 d-flex justify-content-center">
-              <ThoughtList
-                thoughts={user.thoughts}
-                title={`${user.username}'s thoughts...`}
-                showTitle={false}
-                showUsername={false}
-              />
-            </div>
+            Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+          </h2> */}
+
+          <div className="col-12 col-md-10 mb-5">
+            <ThoughtList
+              thoughts={user.thoughts}
+              title={`${user.username}'s thoughts...`}
+              showTitle={false}
+              showUsername={false}
+            />
+
           </div>
           {!userParam && (
             <div
@@ -71,10 +66,11 @@ const Profile = () => {
           )}
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Profile;
+
 
 // style={{ backgroundColor: "#003844" }}
