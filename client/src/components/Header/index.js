@@ -12,14 +12,13 @@ const Header = () => {
   };
 
   return (
-<header className=" mb-4 py-3">
+<header className="w-100 mt-0 mb-2">
   <div
     className="mx-auto"
     style={{
       backgroundColor: Colors.primaryColor,
       color: Colors.secondaryColor,
-      border: `2px solid ${Colors.quarternaryColor}`,
-      boxShadow: `0px 0px 10px 5px ${Colors.quarternaryColor}`,
+      boxShadow: `0px 0px 5px 5px ${Colors.quarternaryColor}`,
     }}
   >
         <div className="container d-flex justify-content-between align-items-center">

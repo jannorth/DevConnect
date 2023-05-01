@@ -1,4 +1,5 @@
 import React from 'react';
+import { Colors } from '../src/colors';
 import {
   ApolloClient,
   InMemoryCache,
@@ -43,6 +44,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    <div style={{ backgroundColor: Colors.tertiaryColor }}>
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
@@ -81,6 +83,7 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
+    </div>
   );
 }
 

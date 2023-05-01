@@ -74,4 +74,3 @@ export default Profile;
 
 
 // style={{ backgroundColor: "#003844" }}
-
