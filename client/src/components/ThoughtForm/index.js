@@ -120,7 +120,7 @@ const ThoughtForm = () => {
                         >
                           <input
                             name="thoughtText"
-                            placeholder="Share your thoughts..."
+                            placeholder="Share..."
                             value={thoughtText}
                             className="form-input w-100"
                             style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -136,7 +136,7 @@ const ThoughtForm = () => {
                       </>
                     ) : (
                       <p>
-                        You need to be logged in to share your thoughts. Please{" "}
+                        You need to be logged in to share . Please{" "}
                         <Link to="/login">login</Link> or{" "}
                         <Link to="/signup">signup.</Link>
                       </p>

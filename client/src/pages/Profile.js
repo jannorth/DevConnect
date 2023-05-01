@@ -8,6 +8,9 @@ import ThoughtList from "../components/ThoughtList";
 import ProfilePage from "../components/ProfilePage";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 
+
+import { Colors } from "./../colors";
+
 import Auth from "../utils/auth";
 
 const Profile = () => {
@@ -27,7 +30,7 @@ const Profile = () => {
   if (!user?.username) {
     return (
       <h4>
-        You need to be logged in to see this. Use the navigation links above to
+       Use the navigation links above to
         sign up or log in!
       </h4>
     );
@@ -51,6 +54,7 @@ const Profile = () => {
               showTitle={false}
               showUsername={false}
             />
+
           </div>
           {!userParam && (
             <div
@@ -67,3 +71,7 @@ const Profile = () => {
 };
 
 export default Profile;
+
+
+// style={{ backgroundColor: "#003844" }}
+

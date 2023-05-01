@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { MDBBtn } from "mdb-react-ui-kit";
 import "bootstrap-icons/font/bootstrap-icons.css";
-// import { BiAward } from 'react-icons/bi';
-
 import Auth from "../../utils/auth";
+import { Colors } from "../../colors";
 
 const Header = () => {
   const logout = (event) => {
@@ -12,37 +12,66 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <div>
-          <Link className="text-light" to="/">
-            <h1 className="m-0">DevConnect</h1>
-          </Link>
-          <p className="m-0">
-            Developing growth. Remote listings. Friendly feedback.
-          </p>
-        </div>
-        <div>
-          {Auth.loggedIn() ? (
-            <>
-              <Link className="btn btn-lg btn-info m-2" to="/me">
-                <i className="bi bi-award-fill me-2"></i>
-                <span>{Auth.getProfile().data.username}'s profile</span>
-              </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
-                Logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
-                Login
-              </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
-                Signup
-              </Link>
-            </>
-          )}
+<header className=" mb-4 py-3">
+  <div
+    className="mx-auto"
+    style={{
+      backgroundColor: Colors.primaryColor,
+      color: Colors.secondaryColor,
+      border: `2px solid ${Colors.quarternaryColor}`,
+      boxShadow: `0px 0px 10px 5px ${Colors.quarternaryColor}`,
+    }}
+  >
+        <div className="container d-flex justify-content-between align-items-center">
+          <div>
+            <Link className="text-light text-decoration-none" to="/">
+              <h1 className="m-0" style={{ color: Colors.secondaryColor }}>DevConnect</h1>
+            </Link>
+            <p className="m-0">
+              Developing growth. Remote listings. Friendly feedback.
+            </p>
+          </div>
+          <div>
+            {Auth.loggedIn() ? (
+              <>
+                <MDBBtn
+                  className="me-2"
+                  color="secondary"
+                  size="lg"
+                  href="/me"
+                >
+                  <i className="bi bi-award-fill me-2"></i>
+                  <span>{Auth.getProfile().data.username}'s profile</span>
+                </MDBBtn>
+                <MDBBtn
+                  color="secondary"
+                  size="lg"
+                  onClick={logout}
+                >
+                  Logout
+                </MDBBtn>
+              </>
+            ) : (
+<>
+<div className="d-flex align-items-center">
+  <Link
+    className="btn btn-primary btn-sm me-2 fw-bold text-uppercase"
+    to="/login"
+    style={{ backgroundColor: Colors.secondaryColor, color: Colors.primaryColor }}
+  >
+    Login
+  </Link>
+  <Link
+    className="btn btn-secondary btn-sm fw-bold text-uppercase"
+    to="/signup"
+    style={{ backgroundColor: Colors.secondaryColor, color: Colors.primaryColor }}
+  >
+    Signup
+  </Link>
+</div>
+</>
+            )}
+          </div>
         </div>
       </div>
     </header>

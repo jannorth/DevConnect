@@ -55,6 +55,7 @@ const ProfilePage = ({
                 </div>
                 <div className="ms-3" style={{ marginTop: "130px" }}>
                   <MDBTypography tag="h5">
+
                     {user.username}
                     {"   "}
 
@@ -68,6 +69,7 @@ const ProfilePage = ({
                   <MDBCardText>
                     {user.city}, {user.state}
                   </MDBCardText>
+\
                 </div>
               </div>
               <div
@@ -119,11 +121,13 @@ const ProfilePage = ({
                     </MDBCardText>
                   </div>
                 </div>
+
                 <div className="d-flex justify-content-between align-items-center mb-4">
                   <MDBCardText className="lead fw-normal mb-0">
                     Recent Post
                   </MDBCardText>
                   <MDBCardText className="mb-0"></MDBCardText>
+
                 </div>
                 <MDBRow></MDBRow>
               </MDBCardBody>
