@@ -21,7 +21,11 @@ const ThoughtList = ({
   showUsername = true,
 }) => {
   if (!thoughts.length) {
-    return <h3>No Post Yet</h3>;
+    return (
+      <div className="d-flex justify-content-center">
+        <h3>No Post Yet...</h3>
+      </div>
+    );
   }
 
   return (
