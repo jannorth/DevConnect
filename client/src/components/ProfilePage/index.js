@@ -48,7 +48,9 @@ const ProfilePage = ({
                   </MDBBtn>
                 </div>
                 <div className="ms-3" style={{ marginTop: "130px" }}>
-                <MDBTypography tag="h5">Andrew Berry{showUsername}</MDBTypography>
+                  <MDBTypography tag="h5">
+                    Andrew Berry{showUsername}
+                  </MDBTypography>
                   <MDBCardText>New York</MDBCardText>
                 </div>
               </div>
@@ -94,20 +96,22 @@ const ProfilePage = ({
                       Front-End Web Developer
                     </MDBCardText>
                     <MDBCardText className="font-italic mb-1">
-                      Lives in Richmond, Virginia 
+                      Lives in Richmond, Virginia
                     </MDBCardText>
                     <MDBCardText className="font-italic mb-0">
-                      Actively searching for new opportunities. 
+                      Actively searching for new opportunities.
                     </MDBCardText>
                   </div>
                 </div>
-                <div className="d-flex justify-content-between align-items-center mb-4">
-                  <MDBCardText className="lead fw-normal mb-0">
-                    Recent Post
-                  </MDBCardText>
-                  <MDBCardText className="mb-0">
-                    
-                  </MDBCardText>
+                <div className="d-flex justify-content-center mt-4">
+                  <div className="d-flex justify-content-center align-items-center">
+                    <MDBCardText className="lead fw-normal mb-0">
+                      Recent Post
+                    </MDBCardText>
+                    <MDBCardText className="mb-0">
+                      {/* Add content here */}
+                    </MDBCardText>
+                  </div>
                 </div>
                 <MDBRow></MDBRow>
               </MDBCardBody>
@@ -120,7 +124,6 @@ const ProfilePage = ({
 };
 
 export default ProfilePage;
-
 
 // export const Colors = {
 //   primaryColor: '#003844',

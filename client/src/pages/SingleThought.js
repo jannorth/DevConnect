@@ -34,7 +34,7 @@ const SingleThought = () => {
           backgroundColor: Colors.primaryColor, 
           color: Colors.secondaryColor 
           }}>
-          had this thought on {thought.createdAt}
+         {thought.createdAt}
         </span>
       </h3>
       <div className="bg-light py-4">

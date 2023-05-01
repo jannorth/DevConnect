@@ -46,7 +46,7 @@ const CommentForm = ({ thoughtId }) => {
       backgroundColor: Colors.primaryColor, 
       color: Colors.secondaryColor 
     }}>
-      <h4 className='card-title'>What are your thoughts on this post?</h4>
+      <h4 className='card-title'>Write a comment...</h4>
 
       {Auth.loggedIn() ? (
         <>
