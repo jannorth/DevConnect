@@ -65,7 +65,9 @@ const ProfilePage = ({
                     )}
                   </MDBTypography>
 
-                  <MDBCardText>New York</MDBCardText>
+                  <MDBCardText>
+                    {user.city}, {user.state}
+                  </MDBCardText>
                 </div>
               </div>
               <div

@@ -5,6 +5,8 @@ export const QUERY_USER = gql`
     user(username: $username) {
       _id
       username
+      city
+      state
       recruiter
       email
       thoughts {
@@ -49,6 +51,8 @@ export const QUERY_ME = gql`
     me {
       _id
       username
+      city
+      state
       recruiter
       email
       thoughts {

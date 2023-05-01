@@ -36,8 +36,6 @@ const Profile = () => {
   if (loading) {
     return <div>Loading...</div>;
   } else if (user != null) {
-    console.log("hello");
-    console.log(user);
     return (
       <div>
         <ProfilePage user={user} />
