@@ -21,14 +21,14 @@ const ThoughtList = ({
   showUsername = true,
 }) => {
   if (!thoughts.length) {
-    return <h3>No Thoughts Yet</h3>;
+    return <h3>No Posts Yet</h3>;
   }
 
   return (
     <div>
     {showTitle && <h3>{title}</h3>}
     {thoughts.map((thought) => (
-      <MDBCard className="shadow-0" style={{ width: "48rem" }} key={thought._id}>
+      <MDBCard className="shadow-0" style={{ width: "auto" }} key={thought._id}>
         <MDBCardBody className="border-bottom pb-2">
           <div className="d-flex align-items-center ps-3 mb-2">
             <Link to={`/profiles/${thought.thoughtAuthor}`}>
