@@ -26,9 +26,9 @@ const CommentList = ({ comments = [] }) => {
                 boxShadow: `0px 0px 10px 5px ${Colors.quarternaryColor}` 
                 }}>
                 <h5 className="card-header">
-                  {comment.commentAuthor} commented{' '}
+                  {comment.commentAuthor} {' '}
                   <span style={{ fontSize: '0.825rem' }}>
-                    on {comment.createdAt}
+                  • {comment.createdAt}
                   </span>
                 </h5>
                 <p className="card-body">{comment.commentText}</p>

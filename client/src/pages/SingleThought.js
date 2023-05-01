@@ -27,14 +27,17 @@ const SingleThought = () => {
   }
   return (
     <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
-        {thought.thoughtAuthor} <br />
+      <h3 className="card-header p-2 m-0" style={{  
+      backgroundColor: Colors.primaryColor, 
+      color: Colors.secondaryColor 
+      }}>
+        {thought.thoughtAuthor}
         <span style={{ 
           fontSize: '1rem', 
           backgroundColor: Colors.primaryColor, 
           color: Colors.secondaryColor 
           }}>
-         {thought.createdAt}
+            • {thought.createdAt}
         </span>
       </h3>
       <div className="bg-light py-4">
