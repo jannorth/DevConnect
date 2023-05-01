@@ -12,6 +12,18 @@ const userSchema = new Schema({
     unique: true,
     trim: true,
   },
+  city: {
+    type: String,
+    required: true,
+    unique: false,
+    trim: true,
+  },
+  state: {
+    type: String,
+    required: true,
+    unique: false,
+    trim: true,
+  },
   email: {
     type: String,
     required: true,

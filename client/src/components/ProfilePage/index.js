@@ -1,4 +1,10 @@
 import React from "react";
+// import icon component
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import the icon
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+// usage
+
 import {
   MDBCol,
   MDBContainer,
@@ -11,8 +17,8 @@ import {
   MDBTypography,
   MDBIcon,
 } from "mdb-react-ui-kit";
-
 const ProfilePage = ({
+  user,
   thoughts,
   title,
   showTitle = true,
@@ -50,9 +56,22 @@ const ProfilePage = ({
                 </div>
                 <div className="ms-3" style={{ marginTop: "130px" }}>
                   <MDBTypography tag="h5">
-                    {username}
+
+
+                    {user.username}
+                    {"   "}
+
+                    {user.recruiter ? (
+                      <FontAwesomeIcon icon={faSearch} fa-2xs="true" />
+                    ) : (
+                      <img />
+                    )}
                   </MDBTypography>
-                  <MDBCardText>New York</MDBCardText>
+
+                  <MDBCardText>
+                    {user.city}, {user.state}
+                  </MDBCardText>
+\
                 </div>
               </div>
               <div
@@ -104,15 +123,13 @@ const ProfilePage = ({
                     </MDBCardText>
                   </div>
                 </div>
-                <div className="d-flex justify-content-center mt-4">
-                  <div className="d-flex justify-content-center align-items-center">
-                    <MDBCardText className="lead fw-normal mb-0">
-                      Recent Post
-                    </MDBCardText>
-                    <MDBCardText className="mb-0">
-                      {/* Add content here */}
-                    </MDBCardText>
-                  </div>
+
+                <div className="d-flex justify-content-between align-items-center mb-4">
+                  <MDBCardText className="lead fw-normal mb-0">
+                    Recent Post
+                  </MDBCardText>
+                  <MDBCardText className="mb-0"></MDBCardText>
+
                 </div>
                 <MDBRow></MDBRow>
               </MDBCardBody>
